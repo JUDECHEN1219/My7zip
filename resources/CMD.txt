@@ -1,0 +1,4 @@
+sudo asitop
+spiderman
+lsof | grep /Volumes/T7
+mdutil -i on 
