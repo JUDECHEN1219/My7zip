@@ -1,0 +1,22 @@
+# 忽略输入输出目录
+input/
+output/
+
+# 忽略构建相关目录
+build/
+dist/
+
+# 忽略 Python 虚拟环境
+.venv/
+
+# 忽略 pyinstaller、nuitka、pip 生成的缓存
+__pycache__/
+*.py[cod]
+*.pyo
+*.spec
+
+# 忽略 VSCode 配置（如果你用 VSCode）
+.vscode/
+
+# macOS 系统文件
+.DS_Store
