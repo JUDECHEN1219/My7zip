@@ -37,10 +37,13 @@ class ExtractThread(QThread):
 
     def run(self):
         def get_7z_path():
-            if getattr(sys, 'frozen', False):  # PyInstaller 打包环境
-                return os.path.join(sys._MEIPASS, 'bin', '7z')
+            """返回项目内 resources/7z 的绝对路径，兼容开发和 PyInstaller 打包"""
+            if getattr(sys, 'frozen', False):  # PyInstaller 打包后运行
+                base_path = sys._MEIPASS
             else:
-                return shutil.which('7z') or './7z'
+                base_path = os.path.dirname(os.path.abspath(__file__))
+
+            return os.path.join(base_path, 'resources', '7z')
 
         # 构造 7z 解压命令
         # 获取打包后的资源路径

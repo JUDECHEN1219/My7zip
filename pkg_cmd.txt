@@ -1,1 +1,14 @@
 pyinstaller myzip.py --windowed --noconfirm --name MyZip  --add-data "/opt/homebrew/bin/7z:bin"
+
+new:
+
+pyinstaller myzip.py --windowed --noconfirm --name MyZip --add-data "resources/7z:resources"
+
+newest:
+
+pyinstaller myzip.py \
+  --windowed \
+  --noconfirm \
+  --name MyZip \
+  --add-data "resources/7z:resources" \
+  --icon "resources/icon.png"
